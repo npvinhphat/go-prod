@@ -1,7 +1,7 @@
 # Production Readiness Checklist
 ## Overview
 
-| Name | Description | Basic | Intermediate | Advanced |
+| Name | Description | Level A | Level B | Level C |
 |------|-------------|-------| ------------ | -------- |
 | First Item | First Item Description | ✅ |  |  |
 | Second Item | Second Item Description |  | ✅ |  |
@@ -10,7 +10,7 @@
 
 ## Observability
 
-| Name | Description | Basic | Intermediate | Advanced |
+| Name | Description | Level A | Level B | Level C |
 |------|-------------|-------| ------------ | -------- |
 | Third Item | Third Item Description |  |  | ✅ |
 | (kubernetes) Sixth Item | Sixth Item Description |  |  | ✅ |

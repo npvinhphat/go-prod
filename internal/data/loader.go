@@ -11,9 +11,9 @@ import (
 
 var tmpl = `
 {{- define "table" -}}
-| Name | Description | Basic | Intermediate | Advanced |
+| Name | Description | Level A | Level B | Level C |
 |------|-------------|-------| ------------ | -------- |
-{{ range . }}| {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} | {{ .Description }} | {{ if contains .Levels "basic" }}✅{{ end }} | {{ if contains .Levels "intermediate" }}✅{{ end }} | {{ if contains .Levels "advanced"}}✅{{ end }} |
+{{ range . }}| {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} | {{ .Description }} | {{ if contains .Levels "a" }}✅{{ end }} | {{ if contains .Levels "b" }}✅{{ end }} | {{ if contains .Levels "c"}}✅{{ end }} |
 {{ end }}
 {{- end -}}
 # Production Readiness Checklist

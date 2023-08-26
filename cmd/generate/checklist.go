@@ -22,7 +22,7 @@ func init() {
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
-	checklistCmd.Flags().String("level", "", "Service level. Allowed: basic, intermediate, advanced.")
+	checklistCmd.Flags().String("level", "", "Service level. Allowed: level-a, level-b, level-c.")
 	checklistCmd.MarkFlagRequired("level")
 
 	GenerateCmd.AddCommand(checklistCmd)
