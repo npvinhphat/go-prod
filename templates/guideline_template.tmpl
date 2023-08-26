@@ -1,0 +1,18 @@
+{{- define "table" -}}
+| Name | Description | Basic | Intermediate | Advanced |
+|------|-------------|-------| ------------ | -------- |
+{{ range . }}| {{ .Name }} | {{ .Description }} | {{ if contains .Levels "basic" }}✅{{ end }} | {{ if contains .Levels "intermediate" }}✅{{ end }} | {{ if contains .Levels "advanced"}}✅{{ end }} |
+{{ end }}
+{{- end -}}
+# Production Readiness Checklist
+
+{{- if .overview }}
+## Overview
+
+{{ template "table" .overview }}
+{{- end }}
+{{- if .observability }}
+## Observability
+
+{{ template "table" .observability }}
+{{- end }}

@@ -1,0 +1,11 @@
+overview:
+  - name: First Item
+    description: First Item Description
+    levels: ["basic"]
+  - name: Second Item
+    description: Second Item Description
+    levels: ["intermediate"]
+observability:
+  - name: Third Item
+    description: Third Item Description
+    levels: ["advanced"]
