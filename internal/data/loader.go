@@ -13,7 +13,7 @@ var tmpl = `
 {{- define "table" -}}
 | Name | Description | Basic | Intermediate | Advanced |
 |------|-------------|-------| ------------ | -------- |
-{{ range . }}| {{ .Name }} | {{ .Description }} | {{ if contains .Levels "basic" }}✅{{ end }} | {{ if contains .Levels "intermediate" }}✅{{ end }} | {{ if contains .Levels "advanced"}}✅{{ end }} |
+{{ range . }}| {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} | {{ .Description }} | {{ if contains .Levels "basic" }}✅{{ end }} | {{ if contains .Levels "intermediate" }}✅{{ end }} | {{ if contains .Levels "advanced"}}✅{{ end }} |
 {{ end }}
 {{- end -}}
 # Production Readiness Checklist
@@ -68,6 +68,11 @@ func LoadData(stacks []string) (map[string][]Item, error) {
 	return sections, nil
 }
 func appendStackToItems(content map[string][]Item, stack string) {
+	// "default" is a generic stack, so we don't need to specify the name
+	// It's also to avoid the stack name in the markdown file
+	if stack == "default" {
+		return
+	}
 	for _, items := range content {
 		for i := range items {
 			items[i].Stack = stack
