@@ -6,7 +6,7 @@ checklists for different technology stacks and production readiness levels.
 
 ## Installation
 
-To install go-prod, you can use the `go get` command:
+To install go-prod, you can use the `go install` command:
 
 ```sh
 go install github.com/npvinhphat/go-prod
