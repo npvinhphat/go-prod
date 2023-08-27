@@ -1,22 +1,22 @@
 package data
 
 import (
-	"os"
 	"path/filepath"
 	"strings"
 	"text/template"
 
 	"dario.cat/mergo"
+	"github.com/npvinhphat/go-prod/assets"
 	"gopkg.in/yaml.v3"
 )
 
-const dataPath string = "data"
+const stacksPath string = "stacks"
 
 func LoadData(stacks []string) (map[string][]Item, error) {
 	result := make(map[string][]Item)
 
 	for _, stack := range stacks {
-		filePath := filepath.Join(dataPath, stack+".yaml")
+		filePath := filepath.Join(stacksPath, stack+".yaml")
 		content, err := loadYamlFile(filePath)
 		if err != nil {
 			return make(map[string][]Item), err
@@ -83,7 +83,7 @@ func appendStackToItems(content map[string][]Item, stack string) {
 func loadYamlFile(filePath string) (map[string][]Item, error) {
 	sectionsMap := make(map[string][]Item)
 
-	content, err := os.ReadFile(filePath)
+	content, err := assets.Assets.ReadFile(filePath)
 	if err != nil {
 		return sectionsMap, err
 	}

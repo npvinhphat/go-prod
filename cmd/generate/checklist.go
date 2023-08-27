@@ -2,8 +2,8 @@ package generate
 
 import (
 	"fmt"
-	"os"
 
+	"github.com/npvinhphat/go-prod/assets"
 	"github.com/npvinhphat/go-prod/internal/data"
 	"github.com/spf13/cobra"
 )
@@ -35,7 +35,7 @@ var checklistCmd = &cobra.Command{
 		data.FilterData(content, level)
 
 		// Then apply the template
-		tmpl, err := os.ReadFile(checklistPath)
+		tmpl, err := assets.Assets.ReadFile(checklistPath)
 		if err != nil {
 			panic(err)
 		}
