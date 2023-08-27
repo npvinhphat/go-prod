@@ -1,6 +1,6 @@
 {{- define "table" -}}
 | Name | Description | Level A | Level B | Level C |
-|------|-------------|-------| ------------ | -------- |
+|------|-------------|---------| ------- | ------- |
 {{ range . }}| {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} | {{ .Description }} | {{ if contains .Levels "a" }}✅{{ end }} | {{ if contains .Levels "b" }}✅{{ end }} | {{ if contains .Levels "c"}}✅{{ end }} |
 {{ end }}
 {{- end -}}
