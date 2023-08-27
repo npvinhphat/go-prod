@@ -11,8 +11,33 @@
 
 {{ template "table" .overview }}
 {{- end }}
+{{- if .deploymentTesting }}
+## Deployment & Testing
+
+{{ template "table" .deploymentTesting }}
+{{- end }}
+{{- if .scalabilityPerformance }}
+## Scalability & Performance
+
+{{ template "table" .scalabilityPerformance }}
+{{- end }}
+{{- if .availabilityResilience }}
+## Availability & Resilience
+
+{{ template "table" .availabilityResilience }}
+{{- end }}
+{{- if .security }}
+## Security
+
+{{ template "table" .security }}
+{{- end }}
 {{- if .observability }}
 ## Observability
 
 {{ template "table" .observability }}
+{{- end }}
+{{- if .operations }}
+## Operations
+
+{{ template "table" .operations }}
 {{- end -}}

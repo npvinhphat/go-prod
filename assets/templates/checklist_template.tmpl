@@ -9,8 +9,33 @@
 
 {{ template "list" .overview }}
 {{- end }}
+{{- if .deploymentTesting }}
+## Deployment & Testing
+
+{{ template "list" .deploymentTesting }}
+{{- end }}
+{{- if .scalabilityPerformance }}
+## Scalability & Performance
+
+{{ template "list" .scalabilityPerformance }}
+{{- end }}
+{{- if .availabilityResilience }}
+## Availability & Resilience
+
+{{ template "list" .availabilityResilience }}
+{{- end }}
+{{- if .security }}
+## Security
+
+{{ template "list" .security }}
+{{- end }}
 {{- if .observability }}
 ## Observability
 
 {{ template "list" .observability }}
+{{- end }}
+{{- if .operations }}
+## Operations
+
+{{ template "list" .operations }}
 {{- end -}}

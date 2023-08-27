@@ -1,11 +1,46 @@
 overview:
-  - name: First Item
-    description: First Item Description
-    levels: ["a"]
-  - name: Second Item
-    description: Second Item Description
-    levels: ["b"]
+  - name: Service Page
+    description: It should have a service page defined.
+    levels: ["a", "b", "c"]
+  - name: Service Level
+    description: It should have a service level defined.
+    levels: ["a", "b", "c"]
+  - name: Contact Information
+    description: It should have contact information defined.
+    levels: ["a", "b", "c"]
+  - name: Direct Customer
+    description: It should have direct customer defined.
+    levels: ["a", "b", "c"]
+  - name: User Docs
+    description: It should have user documentation defined.
+    levels: ["a", "b", "c"]
+  - name: SLA
+    description: It should have SLA defined.
+    levels: ["a", "b", "c"]
+  - name: Architecture
+    description: It should have architecture defined.
+    levels: ["a", "b", "c"]
+deploymentTesting:
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
+scalabilityPerformance:
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
+availabilityResilience:
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
+security:
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
 observability:
-  - name: Third Item
-    description: Third Item Description
-    levels: ["c"]
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
+operations:
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]

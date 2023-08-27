@@ -1,11 +1,8 @@
 overview:
-  - name: Fourth Item
-    description: Fourth Item Description
-    levels: ["a"]
-  - name: Fifth Item
-    description: Fifth Item Description
-    levels: ["b"]
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
 observability:
-  - name: Sixth Item
-    description: Sixth Item Description
-    levels: ["c"]
+  - name: Test Item
+    description: Tess Item
+    levels: ["a", "b", "c"]
