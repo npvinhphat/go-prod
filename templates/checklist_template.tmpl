@@ -1,9 +1,16 @@
+{{- define "list" -}}
+{{ range . }}- [ ] {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} - {{ .Description }}
+{{ end }}
+{{- end -}}
 # Production Readiness Checklist
 
-{{if .overiew}}
+{{- if .overview }}
 ## Overview
-{{end}}
 
-{{if .observability}}
+{{ template "list" .overview }}
+{{- end }}
+{{- if .observability }}
 ## Observability
-{{end}}
+
+{{ template "list" .observability }}
+{{- end -}}
