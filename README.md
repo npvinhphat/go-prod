@@ -37,6 +37,16 @@ go-prod generate checklist --stacks=default,kubernetes,pagerduty,slack,wavefront
 Replace the `--stacks` flag value with the desired technology stacks and
 `--level` with the desired readiness level.
 
+## Acknowledgements
+
+This project is heavily inspired by the [Production Readiness Checklist](https://github.com/mercari/production-readiness-checklist)
+by the [Mercari Engineering](https://engineering.mercari.com/en/) team. I
+extend my appreciation for their valuable work and insights, which have
+contributed to the foundation of **go-prod**.
+
+I encourage you to explore the [Production Readiness Checklist](https://github.com/mercari/production-readiness-checklist)
+repository to learn more about their approach to service production readiness.
+
 ## Contributing
 
 Contributions are welcome! If you find any issues or have suggestions for
