@@ -1,4 +1,4 @@
-# go-prod
+# go-prod: Service Production Readiness Tool
 
 [![GitHub License](https://img.shields.io/github/license/npvinhphat/go-prod)](https://github.com/npvinhphat/go-prod/blob/main/LICENSE)
 
