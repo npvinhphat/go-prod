@@ -1,76 +1,76 @@
 # Production Readiness Checklist
 ## 🌐 Overview
 
-- [ ] Service Page - It should have a service page defined.
+- [ ] **Service Page** - It should have a service page defined.
 
 ### 📚 Service Page Checklist
 
-- [ ] Service Level - It should have a service level defined.
-- [ ] Contact Information - It should have contact information defined.
-- [ ] Direct Customer - It should have direct customer defined.
-- [ ] User Docs - It should have user documentation defined.
-- [ ] SLA/SLO - It should have SLA/SLO defined.
-- [ ] Architecture - It should have architecture defined.
-- [ ] On-call Information - It should have on-call information defined.
+- [ ] **Service Level** - It should have a service level defined.
+- [ ] **Contact Information** - It should have contact information defined.
+- [ ] **Direct Customer** - It should have direct customer defined.
+- [ ] **User Docs** - It should have user documentation defined.
+- [ ] **SLA/SLO** - It should have SLA/SLO defined.
+- [ ] **Architecture** - It should have architecture defined.
+- [ ] **On-call Information** - It should have on-call information defined.
 
 ## 🚀 Deployment & Testing
 
-- [ ] Deployment Procedure - Its deployment procedure is documented in SOP.
-- [ ] Code Review Approval - All PRs should be reviewed by 1 or more reviewers.
-- [ ] Manual Production Deployment - Deployment to production must be executed through CM.
-- [ ] Manual Rollback - A manual rollback procedure is documented and tested.
-- [ ] Minimum Healthiness - It should have at least 66% of production capacity to be healthy during deployment.
-- [ ] Staging Environment - It should have a staging environment.
+- [ ] **Deployment Procedure** - Its deployment procedure is documented in SOP.
+- [ ] **Code Review Approval** - All PRs should be reviewed by 1 or more reviewers.
+- [ ] **Manual Production Deployment** - Deployment to production must be executed through CM.
+- [ ] **Manual Rollback** - A manual rollback procedure is documented and tested.
+- [ ] **Minimum Healthiness** - It should have at least 66% of production capacity to be healthy during deployment.
+- [ ] **Staging Environment** - It should have a staging environment.
 
 ## ⚖️ Scalability & Performance
 
-- [ ] Manual Scaling - It should be able to scale manually to handle changes in workload.
-- [ ] Costs - It should have estimated costs documented.
+- [ ] **Manual Scaling** - It should be able to scale manually to handle changes in workload.
+- [ ] **Costs** - It should have estimated costs documented.
 
 ## 🕒 Availability & Resilience
 
-- [ ] Dependencies Failures - The impact of dependencies' failures is documented.
-- [ ] Component Failures - The impact of components' failures is documented.
-- [ ] Redundancy - It has 2 or more instances per data center.
+- [ ] **Dependencies Failures** - The impact of dependencies' failures is documented.
+- [ ] **Component Failures** - The impact of components' failures is documented.
+- [ ] **Redundancy** - It has 2 or more instances per data center.
 
 ## 🔒 Security
 
-- [ ] Credentials Documentation - All credentials used by it should be documented.
-- [ ] Authentication - It should have authentication enabled for external access.
-- [ ] Limited Permissions - It should have limited users access to production.
-- [ ] Logging Security - There must be no sensitive information in logs.
-- [ ] Security Review - It should be reviewed with Security Team.
+- [ ] **Credentials Documentation** - All credentials used by it should be documented.
+- [ ] **Authentication** - It should have authentication enabled for external access.
+- [ ] **Limited Permissions** - It should have limited users access to production.
+- [ ] **Logging Security** - There must be no sensitive information in logs.
+- [ ] **Security Review** - It should be reviewed with Security Team.
 
 ## 🔍 Observability
 
-- [ ] Production Dashboards - It has production dashboards with relevan metrics.
-- [ ] Dashboards Thresholds - Its dashboards should have threshold lines for each alerts.
-- [ ] Dashboards Permissions - The interested parties should have access to the dashboard.
-- [ ] Actionable Alerts - It should have actionable alerts.
-- [ ] Centralized Logging - Logs should be sent to a centralized logging system.
-- [ ] Logging Permissions - The interested parties should have access to the logs.
-- [ ] Status Page - It should have a status page to communicate with external users.
-- [ ] (slack) Alerts Notifications - Its alerts are sent to Slack channel.
+- [ ] **Production Dashboards** - It has production dashboards with relevan metrics.
+- [ ] **Dashboards Thresholds** - Its dashboards should have threshold lines for each alerts.
+- [ ] **Dashboards Permissions** - The interested parties should have access to the dashboard.
+- [ ] **Actionable Alerts** - It should have actionable alerts.
+- [ ] **Centralized Logging** - Logs should be sent to a centralized logging system.
+- [ ] **Logging Permissions** - The interested parties should have access to the logs.
+- [ ] **Status Page** - It should have a status page to communicate with external users.
+- [ ] **(slack) Alerts Notifications** - Its alerts are sent to Slack channel.
 
 ### 📡 Monitoring Checklist
 
-- [ ] Endpoints Metrics - It should have errors and latencies tracked.
-- [ ] Dependencies Metrics - It should have dependencies metrics tracked.
-- [ ] Available Instances - It should have available/healthy instances tracked.
-- [ ] Resource Utilization - It should have resource utilization (CPU/Memory/Disk) tracked.
+- [ ] **Endpoints Metrics** - It should have errors and latencies tracked.
+- [ ] **Dependencies Metrics** - It should have dependencies metrics tracked.
+- [ ] **Available Instances** - It should have available/healthy instances tracked.
+- [ ] **Resource Utilization** - It should have resource utilization (CPU/Memory/Disk) tracked.
 
 ## ⚙️ Operations
 
-- [ ] On-call Procedure - It has on-call procedure defined.
-- [ ] On-call Dashboard - It has on-call dashboard defined.
-- [ ] On-call Permissions - On-call people should have required access to production systems.
-- [ ] SOP - It should have SOP defined for common operations.
-- [ ] Escalation Procedure - It should have escalation procedure (primary, secondary, managers) defined.
-- [ ] (pagerduty) Service Definition - It has a Service defined in PagerDuty.
+- [ ] **On-call Procedure** - It has on-call procedure defined.
+- [ ] **On-call Dashboard** - It has on-call dashboard defined.
+- [ ] **On-call Permissions** - On-call people should have required access to production systems.
+- [ ] **SOP** - It should have SOP defined for common operations.
+- [ ] **Escalation Procedure** - It should have escalation procedure (primary, secondary, managers) defined.
+- [ ] **(pagerduty) Service Definition** - It has a Service defined in PagerDuty.
 
 ## 💻 Technology Specific
 
-- [ ] (kubernetes) CPU Requests And Limits - CPU requests and limits are set.
-- [ ] (kubernetes) Memory Requests And Limits - Memory requests and limits are set.
-- [ ] (kubernetes) Liveness Probe - It has a liveness probe defined.
-- [ ] (kubernetes) Readiness Probe - It has a readiness probe defined.
+- [ ] **(kubernetes) CPU Requests And Limits** - CPU requests and limits are set.
+- [ ] **(kubernetes) Memory Requests And Limits** - Memory requests and limits are set.
+- [ ] **(kubernetes) Liveness Probe** - It has a liveness probe defined.
+- [ ] **(kubernetes) Readiness Probe** - It has a readiness probe defined.

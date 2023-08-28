@@ -1,5 +1,5 @@
 {{- define "list" -}}
-{{ range . }}- [ ] {{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }} - {{ .Description }}
+{{ range . }}- [ ] **{{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }}** - {{ .Description }}
 {{ end }}
 {{- end -}}
 # Production Readiness Checklist
