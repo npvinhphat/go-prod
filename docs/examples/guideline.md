@@ -77,7 +77,7 @@
 | **Security Scanning** | It should has security scanning in place during CI. |  | ✅ | ✅ |
 | **Auditing** | Its usage should be properly tracked. |  |  | ✅ |
 | **Encryption** | It should have encryption in place for sensitive data. |  | ✅ | ✅ |
-| **Security Review** | It should be reviewed with Security Team. | ✅ | ✅ |  |
+| **Security Review** | It should be reviewed with Security Team. | ✅ | ✅ | ✅ |
 
 ## 🔍 Observability
 

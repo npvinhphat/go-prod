@@ -153,7 +153,7 @@ security:
     levels: ["b", "c"]
   - name: Security Review
     description: It should be reviewed with Security Team.
-    levels: ["a", "b", c"]
+    levels: ["a", "b", "c"]
 observability:
   - name: Production Dashboards
     description: It has production dashboards with relevan metrics.
