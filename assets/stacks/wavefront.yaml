@@ -1,0 +1,9 @@
+observability:
+  - name: Warning Alerts
+    description: Its warning alerts are sent to PagerDuty with low urgency.
+    levels: ["b", "c"]
+    needs: ["pagerduty"]
+  - name: Critical Alerts
+    description: Its critical alerts are sent to PagerDuty with high urgency.
+    levels: ["b", "c"]
+    needs: ["pagerduty"]

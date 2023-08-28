@@ -1,0 +1,4 @@
+observability:
+  - name: Alerts Notifications
+    description: Its alerts are sent to Slack channel.
+    levels: ["a", "b", "c"]

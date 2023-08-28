@@ -1,50 +1,132 @@
 # Production Readiness Guideline
-## Overview
+## 🌐 Overview
 
 | Name | Description | Level A | Level B | Level C |
 |------|-------------|---------| ------- | ------- |
 | Service Page | It should have a service page defined. | ✅ | ✅ | ✅ |
+
+### 📚 Service Page Checklist
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
 | Service Level | It should have a service level defined. | ✅ | ✅ | ✅ |
 | Contact Information | It should have contact information defined. | ✅ | ✅ | ✅ |
 | Direct Customer | It should have direct customer defined. | ✅ | ✅ | ✅ |
 | User Docs | It should have user documentation defined. | ✅ | ✅ | ✅ |
-| SLA | It should have SLA defined. | ✅ | ✅ | ✅ |
+| SLA/SLO | It should have SLA/SLO defined. | ✅ | ✅ | ✅ |
 | Architecture | It should have architecture defined. | ✅ | ✅ | ✅ |
-| (kubernetes) Test Item | Tess Item | ✅ | ✅ | ✅ |
+| On-call Information | It should have on-call information defined. | ✅ | ✅ | ✅ |
 
-## Deployment & Testing
-
-| Name | Description | Level A | Level B | Level C |
-|------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
-
-## Scalability & Performance
+## 🚀 Deployment & Testing
 
 | Name | Description | Level A | Level B | Level C |
 |------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
+| Deployment Procedure | Its deployment procedure is documented in SOP. | ✅ | ✅ | ✅ |
+| Code Review Approval | All PRs should be reviewed by 1 or more reviewers. | ✅ | ✅ | ✅ |
+| Unit Test | It should have at least 80% unit test coverage. |  | ✅ | ✅ |
+| Static Code Analysis | Code is automatically scanned / linted in CI. |  | ✅ | ✅ |
+| Synthetic Test | Automated synthetic tests should test customers' critical paths. |  |  | ✅ |
+| Manual Production Deployment | Deployment to production must be executed through CM. | ✅ | ✅ |  |
+| Manual Rollback | A manual rollback procedure is documented and tested. | ✅ | ✅ | ✅ |
+| Health Check | It should have health check enabled. |  | ✅ | ✅ |
+| Smoke Test | It should have smoke test enabled. |  | ✅ | ✅ |
+| Load Test | It should have load test in-place, either manual or automatically. |  | ✅ | ✅ |
+| Minimum Healthiness | It should have at least 66% of production capacity to be healthy during deployment. | ✅ | ✅ | ✅ |
+| Staging Environment | It should have a staging environment. | ✅ | ✅ | ✅ |
+| OneBox Environment | It should deploy to one single host in production at first. |  |  | ✅ |
+| Promotion Blocker | Deployments should be blocked outside of business hours / during outages. |  | ✅ | ✅ |
+| Automatic Production Deployment | It should have automatic production deployment. |  |  | ✅ |
+| Automatic Rollback Deployment | Automatic rollback should be triggered if there is a problem with deployments. |  |  | ✅ |
 
-## Availability & Resilience
-
-| Name | Description | Level A | Level B | Level C |
-|------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
-
-## Security
-
-| Name | Description | Level A | Level B | Level C |
-|------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
-
-## Observability
-
-| Name | Description | Level A | Level B | Level C |
-|------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
-| (kubernetes) Test Item | Tess Item | ✅ | ✅ | ✅ |
-
-## Operations
+## ⚖️ Scalability & Performance
 
 | Name | Description | Level A | Level B | Level C |
 |------|-------------|---------| ------- | ------- |
-| Test Item | Tess Item | ✅ | ✅ | ✅ |
+| Manual Scaling | It should be able to scale manually to handle changes in workload. | ✅ | ✅ | ✅ |
+| Capacity Planning | It should be able to handle expected load (either through load test or traffic control). |  | ✅ | ✅ |
+| Request Volume | It should have expected TPS / peak TPS documented. |  | ✅ | ✅ |
+| Traffic Surge | It should be able to handle sudden surge of traffic if required. |  |  | ✅ |
+| Costs | It should have estimated costs documented. | ✅ | ✅ | ✅ |
+| Automatic Scaling | It should be able to scale automatically to handle changes in workload. |  |  | ✅ |
+
+## 🕒 Availability & Resilience
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| Dependencies Failures | The impact of dependencies' failures is documented. | ✅ | ✅ | ✅ |
+| Component Failures | The impact of components' failures is documented. | ✅ | ✅ | ✅ |
+| Timeout | It should set an appropiate timeout to network requests. |  | ✅ | ✅ |
+| Throttling | It should have throttling in-place to prevent cascading failures. |  | ✅ | ✅ |
+| Fault Tolerance | It should retry properly when dependencies fail. |  | ✅ | ✅ |
+| Graceful Shutdown | It should stop processing new request upon receiving SIGTERM. |  |  | ✅ |
+| Graceful Degradation | It should keep working while dependencies are not working properly. |  |  | ✅ |
+| Redundancy | It has 2 or more instances per data center. | ✅ | ✅ | ✅ |
+| Data Backup | It should have data backup implemented for critical data. |  | ✅ | ✅ |
+
+## 🔒 Security
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| Credentials Documentation | All credentials used by it should be documented. | ✅ | ✅ | ✅ |
+| Credentials Management | All credentials should be stored in a centralized secret store. |  | ✅ | ✅ |
+| Credentials Rotation | All credentails should be short-lived, or at least have a rotation plan in place. |  | ✅ | ✅ |
+| Authentication | It should have authentication enabled for external access. | ✅ | ✅ | ✅ |
+| Authorization | It should have authorization enabled for external access. |  | ✅ | ✅ |
+| Limited Permissions | It should have limited users access to production. | ✅ | ✅ | ✅ |
+| Logging Security | There must be no sensitive information in logs. | ✅ | ✅ | ✅ |
+| Security Scanning | It should has security scanning in place during CI. |  | ✅ | ✅ |
+| Auditing | Its usage should be properly tracked. |  |  | ✅ |
+| Encryption | It should have encryption in place for sensitive data. |  | ✅ | ✅ |
+| Security Review | It should be reviewed with Security Team. | ✅ | ✅ |  |
+
+## 🔍 Observability
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| Production Dashboards | It has production dashboards with relevan metrics. | ✅ | ✅ | ✅ |
+| Dashboards Thresholds | Its dashboards should have threshold lines for each alerts. | ✅ | ✅ | ✅ |
+| Dashboards Permissions | The interested parties should have access to the dashboard. | ✅ | ✅ | ✅ |
+| Dashboard Separation | There should be dashboards for different stages/regions. |  | ✅ | ✅ |
+| Actionable Alerts | It should have actionable alerts. | ✅ | ✅ | ✅ |
+| Centralized Logging | Logs should be sent to a centralized logging system. | ✅ | ✅ | ✅ |
+| Logging Permissions | The interested parties should have access to the logs. | ✅ | ✅ | ✅ |
+| Structured Logging | It should have structured logging with relevant information. |  | ✅ | ✅ |
+| Status Page | It should have a status page to communicate with external users. | ✅ | ✅ | ✅ |
+| Tracing | Each request should be traceable across different components. |  |  | ✅ |
+| Profiling | It should have profiling enabled. |  |  | ✅ |
+| Events | Important events should be tracked. |  |  | ✅ |
+| (slack) Alerts Notifications | Its alerts are sent to Slack channel. | ✅ | ✅ | ✅ |
+| (wavefront) Warning Alerts | Its warning alerts are sent to PagerDuty with low urgency. |  | ✅ | ✅ |
+| (wavefront) Critical Alerts | Its critical alerts are sent to PagerDuty with high urgency. |  | ✅ | ✅ |
+
+###  📡 Monitoring Checklist
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| Endpoints Metrics | It should have errors and latencies tracked. | ✅ | ✅ | ✅ |
+| Dependencies Metrics | It should have dependencies metrics tracked. | ✅ | ✅ | ✅ |
+| Available Instances | It should have available/healthy instances tracked. | ✅ | ✅ | ✅ |
+| Resource Utilization | It should have resource utilization (CPU/Memory/Disk) tracked. | ✅ | ✅ | ✅ |
+| SLA/SLO Metrics | It should have SLA/SLO metrics tracked. |  | ✅ | ✅ |
+
+## ⚙️ Operations
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| On-call Procedure | It has on-call procedure defined. | ✅ | ✅ | ✅ |
+| On-call Dashboard | It has on-call dashboard defined. | ✅ | ✅ | ✅ |
+| On-call Permissions | On-call people should have required access to production systems. | ✅ | ✅ | ✅ |
+| SOP | It should have SOP defined for common operations. | ✅ | ✅ | ✅ |
+| Escalation Procedure | It should have escalation procedure (primary, secondary, managers) defined. | ✅ | ✅ | ✅ |
+| (pagerduty) Service Definition | It has a Service defined in PagerDuty. | ✅ | ✅ | ✅ |
+
+## 💻 Technology Specific
+
+| Name | Description | Level A | Level B | Level C |
+|------|-------------|---------| ------- | ------- |
+| (kubernetes) CPU Requests And Limits | CPU requests and limits are set. | ✅ | ✅ | ✅ |
+| (kubernetes) Memory Requests And Limits | Memory requests and limits are set. | ✅ | ✅ | ✅ |
+| (kubernetes) Liveness Probe | It has a liveness probe defined. | ✅ | ✅ | ✅ |
+| (kubernetes) Readiness Probe | It has a readiness probe defined. | ✅ | ✅ | ✅ |
+| (kubernetes) Startup Probe | It has a startup probe defined. |  | ✅ | ✅ |
+| (kubernetes) Readiness Probe | It has a readiness probe defined. |  |  | ✅ |

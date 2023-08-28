@@ -2,6 +2,7 @@ overview:
   - name: Service Page
     description: It should have a service page defined.
     levels: ["a", "b", "c"]
+servicePageChecklist:
   - name: Service Level
     description: It should have a service level defined.
     levels: ["a", "b", "c"]
@@ -14,33 +15,211 @@ overview:
   - name: User Docs
     description: It should have user documentation defined.
     levels: ["a", "b", "c"]
-  - name: SLA
-    description: It should have SLA defined.
+  - name: SLA/SLO
+    description: It should have SLA/SLO defined.
     levels: ["a", "b", "c"]
   - name: Architecture
     description: It should have architecture defined.
     levels: ["a", "b", "c"]
+  - name: On-call Information
+    description: It should have on-call information defined.
+    levels: ["a", "b", "c"]
 deploymentTesting:
-  - name: Test Item
-    description: Tess Item
+  - name: Deployment Procedure
+    description: Its deployment procedure is documented in SOP.
     levels: ["a", "b", "c"]
+  - name: Code Review Approval
+    description: All PRs should be reviewed by 1 or more reviewers.
+    levels: ["a", "b", "c"]
+  - name: Unit Test
+    description: It should have at least 80% unit test coverage.
+    levels: ["b", "c"]
+  - name: Static Code Analysis
+    description: Code is automatically scanned / linted in CI.
+    levels: ["b", "c"]
+  - name: Synthetic Test
+    description: Automated synthetic tests should test customers' critical paths.
+    levels: ["c"]
+  - name: Manual Production Deployment
+    description: Deployment to production must be executed through CM.
+    levels: ["a", "b"]
+  - name: Manual Rollback
+    description: A manual rollback procedure is documented and tested.
+    levels: ["a", "b", "c"]
+  - name: Health Check
+    description: It should have health check enabled.
+    levels: ["b", "c"]
+  - name: Smoke Test
+    description: It should have smoke test enabled.
+    levels: ["b", "c"]
+  - name: Load Test
+    description: It should have load test in-place, either manual or automatically.
+    levels: ["b", "c"]
+  - name: Minimum Healthiness
+    description: It should have at least 66% of production capacity to be healthy during deployment.
+    levels: ["a", "b", "c"]
+  - name: Staging Environment
+    description: It should have a staging environment.
+    levels: ["a", "b", "c"]
+  - name: OneBox Environment
+    description: It should deploy to one single host in production at first.
+    levels: ["c"]
+  - name: Promotion Blocker
+    description: Deployments should be blocked outside of business hours / during outages.
+    levels: ["b", "c"]
+  - name: Automatic Production Deployment
+    description: It should have automatic production deployment.
+    levels: ["c"]
+  - name: Automatic Rollback Deployment
+    description: Automatic rollback should be triggered if there is a problem with deployments.
+    levels: ["c"]
 scalabilityPerformance:
-  - name: Test Item
-    description: Tess Item
+  - name: Manual Scaling
+    description: It should be able to scale manually to handle changes in workload.
     levels: ["a", "b", "c"]
+  - name: Capacity Planning
+    description: It should be able to handle expected load (either through load test or traffic control).
+    levels: ["b", "c"]
+  - name: Request Volume
+    description: It should have expected TPS / peak TPS documented.
+    levels: ["b", "c"]
+  - name: Traffic Surge
+    description: It should be able to handle sudden surge of traffic if required.
+    levels: ["c"]
+  - name: Costs
+    description: It should have estimated costs documented.
+    levels: ["a", "b", "c"]
+  - name: Automatic Scaling
+    description: It should be able to scale automatically to handle changes in workload.
+    levels: ["c"]
 availabilityResilience:
-  - name: Test Item
-    description: Tess Item
+  - name: Dependencies Failures
+    description: The impact of dependencies' failures is documented.
     levels: ["a", "b", "c"]
+  - name: Component Failures
+    description: The impact of components' failures is documented.
+    levels: ["a", "b", "c"]
+  - name: Timeout
+    description: It should set an appropiate timeout to network requests.
+    levels: ["b", "c"]
+  - name: Throttling
+    description: It should have throttling in-place to prevent cascading failures.
+    levels: ["b", "c"]
+  - name: Fault Tolerance
+    description: It should retry properly when dependencies fail.
+    levels: ["b", "c"]
+  - name: Graceful Shutdown
+    description: It should stop processing new request upon receiving SIGTERM.
+    levels: ["c"]
+  - name: Graceful Degradation
+    description: It should keep working while dependencies are not working properly.
+    levels: ["c"]
+  - name: Redundancy
+    description: It has 2 or more instances per data center.
+    levels: ["a", "b", "c"]
+  - name: Data Backup
+    description: It should have data backup implemented for critical data.
+    levels: ["b", "c"]
 security:
-  - name: Test Item
-    description: Tess Item
+  - name: Credentials Documentation
+    description: All credentials used by it should be documented.
     levels: ["a", "b", "c"]
+  - name: Credentials Management
+    description: All credentials should be stored in a centralized secret store.
+    levels: ["b", "c"]
+  - name: Credentials Rotation
+    description: All credentails should be short-lived, or at least have a rotation plan in place.
+    levels: ["b", "c"]
+  - name: Authentication
+    description: It should have authentication enabled for external access.
+    levels: ["a", "b", "c"]
+  - name: Authorization
+    description: It should have authorization enabled for external access.
+    levels: ["b", "c"]
+  - name: Limited Permissions
+    description: It should have limited users access to production.
+    levels: ["a", "b", "c"]
+  - name: Logging Security
+    description: There must be no sensitive information in logs.
+    levels: ["a", "b", "c"]
+  - name: Security Scanning
+    description: It should has security scanning in place during CI.
+    levels: ["b", "c"]
+  - name: Auditing
+    description: Its usage should be properly tracked.
+    levels: ["c"]
+  - name: Encryption
+    description: It should have encryption in place for sensitive data.
+    levels: ["b", "c"]
+  - name: Security Review
+    description: It should be reviewed with Security Team.
+    levels: ["a", "b", c"]
 observability:
-  - name: Test Item
-    description: Tess Item
+  - name: Production Dashboards
+    description: It has production dashboards with relevan metrics.
     levels: ["a", "b", "c"]
+  - name: Dashboards Thresholds
+    description: Its dashboards should have threshold lines for each alerts.
+    levels: ["a", "b", "c"]
+  - name: Dashboards Permissions
+    description: The interested parties should have access to the dashboard.
+    levels: ["a", "b", "c"]
+  - name: Dashboard Separation
+    description: There should be dashboards for different stages/regions.
+    levels: ["b", "c"]
+  - name: Actionable Alerts
+    description: It should have actionable alerts.
+    levels: ["a", "b", "c"]
+  - name: Centralized Logging
+    description: Logs should be sent to a centralized logging system.
+    levels: ["a", "b", "c"]
+  - name: Logging Permissions
+    description: The interested parties should have access to the logs.
+    levels: ["a", "b", "c"]
+  - name: Structured Logging
+    description: It should have structured logging with relevant information.
+    levels: ["b", "c"]
+  - name: Status Page
+    description: It should have a status page to communicate with external users.
+    levels: ["a", "b", "c"]
+  - name: Tracing
+    description: Each request should be traceable across different components.
+    levels: ["c"]
+  - name: Profiling
+    description: It should have profiling enabled.
+    levels: ["c"]
+  - name: Events
+    description: Important events should be tracked.
+    levels: ["c"]
+monitoringChecklist:
+  - name: Endpoints Metrics
+    description: It should have errors and latencies tracked.
+    levels: ["a", "b", "c"]
+  - name: Dependencies Metrics
+    description: It should have dependencies metrics tracked.
+    levels: ["a", "b", "c"]
+  - name: Available Instances
+    description: It should have available/healthy instances tracked.
+    levels: ["a", "b", "c"]
+  - name: Resource Utilization
+    description: It should have resource utilization (CPU/Memory/Disk) tracked.
+    levels: ["a", "b", "c"]
+  - name: SLA/SLO Metrics
+    description: It should have SLA/SLO metrics tracked.
+    levels: ["b", "c"]
 operations:
-  - name: Test Item
-    description: Tess Item
+  - name: On-call Procedure
+    description: It has on-call procedure defined.
+    levels: ["a", "b", "c"]
+  - name: On-call Dashboard
+    description: It has on-call dashboard defined.
+    levels: ["a", "b", "c"]
+  - name: On-call Permissions
+    description: On-call people should have required access to production systems.
+    levels: ["a", "b", "c"]
+  - name: SOP
+    description: It should have SOP defined for common operations.
+    levels: ["a", "b", "c"]
+  - name: Escalation Procedure
+    description: It should have escalation procedure (primary, secondary, managers) defined.
     levels: ["a", "b", "c"]

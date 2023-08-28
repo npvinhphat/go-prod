@@ -1,8 +1,19 @@
-overview:
-  - name: Test Item
-    description: Tess Item
+technologySpecific:
+  - name: CPU Requests And Limits
+    description: CPU requests and limits are set.
     levels: ["a", "b", "c"]
-observability:
-  - name: Test Item
-    description: Tess Item
+  - name: Memory Requests And Limits
+    description: Memory requests and limits are set.
     levels: ["a", "b", "c"]
+  - name: Liveness Probe
+    description: It has a liveness probe defined.
+    levels: ["a", "b", "c"]
+  - name: Readiness Probe
+    description: It has a readiness probe defined.
+    levels: ["a", "b", "c"]
+  - name: Startup Probe
+    description: It has a startup probe defined.
+    levels: ["b", "c"]
+  - name: Readiness Probe
+    description: It has a readiness probe defined.
+    levels: ["c"]

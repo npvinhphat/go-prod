@@ -5,37 +5,52 @@
 # Production Readiness Checklist
 
 {{- if .overview }}
-## Overview
+## 🌐 Overview
 
 {{ template "list" .overview }}
+{{- if .servicePageChecklist }}
+### 📚 Service Page Checklist
+
+{{ template "list" .servicePageChecklist }}
+{{- end }}
 {{- end }}
 {{- if .deploymentTesting }}
-## Deployment & Testing
+## 🚀 Deployment & Testing
 
 {{ template "list" .deploymentTesting }}
 {{- end }}
 {{- if .scalabilityPerformance }}
-## Scalability & Performance
+## ⚖️ Scalability & Performance
 
 {{ template "list" .scalabilityPerformance }}
 {{- end }}
 {{- if .availabilityResilience }}
-## Availability & Resilience
+## 🕒 Availability & Resilience
 
 {{ template "list" .availabilityResilience }}
 {{- end }}
 {{- if .security }}
-## Security
+## 🔒 Security
 
 {{ template "list" .security }}
 {{- end }}
 {{- if .observability }}
-## Observability
+## 🔍 Observability
 
 {{ template "list" .observability }}
+{{- if .monitoringChecklist }}
+### 📡 Monitoring Checklist
+
+{{ template "list" .monitoringChecklist }}
+{{- end }}
 {{- end }}
 {{- if .operations }}
-## Operations
+## ⚙️ Operations
 
 {{ template "list" .operations }}
+{{- end }}
+{{- if .technologySpecific }}
+## 💻 Technology Specific
+
+{{ template "list" .technologySpecific }}
 {{- end -}}

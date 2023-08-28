@@ -6,7 +6,13 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var allowedStacks = []string{"default", "kubernetes"}
+var allowedStacks = []string{
+	"default",
+	"kubernetes",
+	"pagerduty",
+	"slack",
+	"wavefront",
+}
 
 var stacks []string
 
