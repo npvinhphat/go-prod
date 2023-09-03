@@ -13,36 +13,39 @@ import (
 
 const stacksPath string = "stacks"
 
-func LoadData(stacks []string) (map[string][]Item, error) {
+func LoadData(command string, stacks []string) (Data, error) {
 	result := make(map[string][]Item)
 
 	for _, stack := range stacks {
 		filePath := filepath.Join(stacksPath, stack+".yaml")
 		content, err := loadYamlFile(filePath)
 		if err != nil {
-			return make(map[string][]Item), err
+			return Data{}, err
 		}
 		appendStackToItems(content, stack)
 
 		mergo.Merge(&result, content, mergo.WithAppendSlice)
 	}
 
-	return result, nil
+	return Data{
+		Command: command,
+		Items:   result,
+	}, nil
 }
 
-func FilterData(input map[string][]Item, level string) {
-	for section, items := range input {
+func FilterData(data Data, level string) {
+	for section, items := range data.Items {
 		var filteredItems []Item
 		for _, item := range items {
 			if contains(item.Levels, level) {
 				filteredItems = append(filteredItems, item)
 			}
 		}
-		input[section] = filteredItems
+		data.Items[section] = filteredItems
 	}
 }
 
-func ApplyData(input map[string][]Item, tmpl string) (string, error) {
+func ApplyData(data Data, tmpl string) (string, error) {
 	funcMap := template.FuncMap{
 		"contains":   contains,
 		"formatName": formatName,
@@ -52,7 +55,7 @@ func ApplyData(input map[string][]Item, tmpl string) (string, error) {
 		return "", err
 	}
 	var output strings.Builder
-	err = t.Execute(&output, input)
+	err = t.Execute(&output, data)
 	if err != nil {
 		return "", err
 	}

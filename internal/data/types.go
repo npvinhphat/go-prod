@@ -7,3 +7,8 @@ type Item struct {
 	Link        string   `yaml:"link"`
 	Stack       string
 }
+
+type Data struct {
+	Command string
+	Items   map[string][]Item
+}

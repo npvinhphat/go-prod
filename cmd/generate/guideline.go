@@ -2,6 +2,8 @@ package generate
 
 import (
 	"fmt"
+	"os"
+	"strings"
 
 	"github.com/npvinhphat/go-prod/assets"
 	"github.com/npvinhphat/go-prod/internal/data"
@@ -21,8 +23,8 @@ var guidelineCmd = &cobra.Command{
 		}
 
 		// First load the data
-		var content map[string][]data.Item
-		content, err = data.LoadData(stacks)
+		var content data.Data
+		content, err = data.LoadData(strings.Join(os.Args, " "), stacks)
 		if err != nil {
 			panic(err)
 		}
