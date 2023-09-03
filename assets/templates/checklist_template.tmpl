@@ -1,10 +1,9 @@
 {{- define "list" -}}
-{{ range . }}- [ ] **{{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }}** - {{ .Description }}
+{{ range . }}- [ ] **{{formatName .}}** - {{ .Description }}
 {{ end }}
 {{- end -}}
 # Production Readiness Checklist
-
-{{- if .overview }}
+{{ if .overview }}
 ## 🌐 Overview
 
 {{ template "list" .overview }}

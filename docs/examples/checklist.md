@@ -1,4 +1,5 @@
 # Production Readiness Checklist
+
 ## 🌐 Overview
 
 - [ ] **Service Page** - It should have a service page defined.
@@ -54,7 +55,7 @@
 
 ### 📡 Monitoring Checklist
 
-- [ ] **Endpoints Metrics** - It should have errors and latencies tracked.
+- [ ] **[RED Metrics](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/)** - It should have rate, errors, and durations tracked.
 - [ ] **Dependencies Metrics** - It should have dependencies metrics tracked.
 - [ ] **Available Instances** - It should have available/healthy instances tracked.
 - [ ] **Resource Utilization** - It should have resource utilization (CPU/Memory/Disk) tracked.

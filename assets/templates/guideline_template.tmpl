@@ -1,12 +1,11 @@
 {{- define "table" -}}
 | Name | Description | Level A | Level B | Level C |
 |------|-------------|---------| ------- | ------- |
-{{ range . }}| **{{ if .Stack }}({{ .Stack }}) {{end}}{{ .Name }}** | {{ .Description }} | {{ if contains .Levels "a" }}✅{{ end }} | {{ if contains .Levels "b" }}✅{{ end }} | {{ if contains .Levels "c"}}✅{{ end }} |
+{{ range . }}| **{{formatName .}}** | {{ .Description }} | {{ if contains .Levels "a" }}✅{{ end }} | {{ if contains .Levels "b" }}✅{{ end }} | {{ if contains .Levels "c"}}✅{{ end }} |
 {{ end }}
 {{- end -}}
 # Production Readiness Guideline
-
-{{- if .overview }}
+{{ if .overview }}
 ## 🌐 Overview
 
 {{ template "table" .overview }}
@@ -41,7 +40,7 @@
 
 {{ template "table" .observability }}
 {{- if .monitoringChecklist }}
-###  📡 Monitoring Checklist
+### 📡 Monitoring Checklist
 
 {{ template "table" .monitoringChecklist }}
 {{- end }}

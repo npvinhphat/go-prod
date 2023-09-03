@@ -1,6 +1,7 @@
 package data
 
 import (
+	"fmt"
 	"path/filepath"
 	"strings"
 	"text/template"
@@ -43,7 +44,8 @@ func FilterData(input map[string][]Item, level string) {
 
 func ApplyData(input map[string][]Item, tmpl string) (string, error) {
 	funcMap := template.FuncMap{
-		"contains": contains,
+		"contains":   contains,
+		"formatName": formatName,
 	}
 	t, err := template.New("template").Funcs(funcMap).Parse(tmpl)
 	if err != nil {
@@ -65,6 +67,17 @@ func contains(list []string, target string) bool {
 		}
 	}
 	return false
+}
+
+func formatName(item Item) string {
+	result := item.Name
+	if item.Stack != "" {
+		result = fmt.Sprintf("(%s) %s", item.Stack, result)
+	}
+	if item.Link != "" {
+		result = fmt.Sprintf("[%s](%s)", result, item.Link)
+	}
+	return result
 }
 
 func appendStackToItems(content map[string][]Item, stack string) {

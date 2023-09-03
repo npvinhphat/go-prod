@@ -192,9 +192,10 @@ observability:
     description: Important events should be tracked.
     levels: ["c"]
 monitoringChecklist:
-  - name: Endpoints Metrics
-    description: It should have errors and latencies tracked.
+  - name: RED Metrics
+    description: It should have rate, errors, and durations tracked.
     levels: ["a", "b", "c"]
+    link: https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/
   - name: Dependencies Metrics
     description: It should have dependencies metrics tracked.
     levels: ["a", "b", "c"]

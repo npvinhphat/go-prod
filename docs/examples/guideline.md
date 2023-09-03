@@ -1,4 +1,5 @@
 # Production Readiness Guideline
+
 ## 🌐 Overview
 
 | Name | Description | Level A | Level B | Level C |
@@ -99,11 +100,11 @@
 | **(wavefront) Warning Alerts** | Its warning alerts are sent to PagerDuty with low urgency. |  | ✅ | ✅ |
 | **(wavefront) Critical Alerts** | Its critical alerts are sent to PagerDuty with high urgency. |  | ✅ | ✅ |
 
-###  📡 Monitoring Checklist
+### 📡 Monitoring Checklist
 
 | Name | Description | Level A | Level B | Level C |
 |------|-------------|---------| ------- | ------- |
-| **Endpoints Metrics** | It should have errors and latencies tracked. | ✅ | ✅ | ✅ |
+| **[RED Metrics](https://www.weave.works/blog/the-red-method-key-metrics-for-microservices-architecture/)** | It should have rate, errors, and durations tracked. | ✅ | ✅ | ✅ |
 | **Dependencies Metrics** | It should have dependencies metrics tracked. | ✅ | ✅ | ✅ |
 | **Available Instances** | It should have available/healthy instances tracked. | ✅ | ✅ | ✅ |
 | **Resource Utilization** | It should have resource utilization (CPU/Memory/Disk) tracked. | ✅ | ✅ | ✅ |
