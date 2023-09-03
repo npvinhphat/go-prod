@@ -6,7 +6,7 @@ import (
 	"github.com/spf13/cobra"
 )
 
-var allowedStacks = []string{
+var availableStacks = []string{
 	"default",
 	"kubernetes",
 	"pagerduty",
@@ -34,7 +34,11 @@ func init() {
 	// Cobra supports Persistent Flags which will work for this command
 	// and all subcommands, e.g.:
 	// generateCmd.PersistentFlags().String("foo", "", "A help for foo")
-	GenerateCmd.PersistentFlags().StringSliceVar(&stacks, "stacks", []string{"default"}, "technology stacks used")
+	GenerateCmd.PersistentFlags().StringSliceVar(
+		&stacks,
+		"stacks",
+		[]string{"default"},
+		fmt.Sprintf("technology stacks used. Available: %v.", availableStacks))
 
 	// Cobra supports local flags which will only run when this command
 	// is called directly, e.g.:
@@ -43,8 +47,8 @@ func init() {
 
 func validateStacks(stacks []string) error {
 	for _, stack := range stacks {
-		if !contains(allowedStacks, stack) {
-			return fmt.Errorf("stack %s is not allowed", stack)
+		if !contains(availableStacks, stack) {
+			return fmt.Errorf("stack %s is not availabe", stack)
 		}
 	}
 	return nil
